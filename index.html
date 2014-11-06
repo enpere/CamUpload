@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="cam">
+    </div>
+    <button class="snap">Take photo</button>
+
+    <script src="src/libs/webcamjs/webcam.min.js"></script>
+    <script src="src/js/cam.js"></script>
+    <script>
+
+        var options = {
+            el: "#cam",
+            width: "100%",
+            height: "500px",
+            uploadUri: "/test"
+        };
+        
+        var cam = new Cam(options);
+
+        var button = document.querySelector('.snap');
+
+        button.addEventListener('click', function() {
+            cam.attach("#cam");
+            this.remove();
+        });
+
+
+
+    </script>
+</body>
+
+</html>
