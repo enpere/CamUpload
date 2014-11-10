@@ -85,7 +85,7 @@
                        	photo.onload = function() {
                        	    //draw photo into canvas when ready
   							ctx.drawImage(photo, 0, 0, 500, 400);
-                       	}
+                       	};
 
                        	photo.src = imgUrl;
                        	URL.revokeObjectURL(imgURL);
@@ -111,7 +111,7 @@
     }
 
     function isMobile() {
-        return true;
+        return Modernizr.touch;
     }
 
     Cam.prototype = {
