@@ -1,7 +1,6 @@
-;
-(function(name, context, definition) {
-    if (typeof module != 'undefined' && module.exports) module.exports = definition()
-    else if (typeof define == 'function' && define.amd) define(definition)
+;(function(name, context, definition) {
+    if (typeof module != 'undefined' && module.exports) module.exports = definition();
+    else if (typeof define == 'function' && define.amd) define(definition);
     else context[name] = definition();
 }("Cam", this, function() {
     'use strict';
@@ -14,7 +13,7 @@
         return (scope || document).querySelector(el);
     	},
         ce = function(el, props) {
-        	var el = document.createElement(el);
+        	el = document.createElement(el);
 
         	if(typeof props === 'object') {
         		Object.keys(props).forEach(function(key) {
@@ -72,14 +71,12 @@
                         var URL = window.URL || window.webkitURL;
                         // Create ObjectURL
                         var imgURL = URL.createObjectURL(file);
-                        console.log(imgURL);
                         // console.log(imgURL);
                         // // // Set img src to ObjectURL
                         // showPicture.src = imgURL;
                         // // // Revoke ObjectURL
                         // URL.revokeObjectURL(imgURL);
                        	var ctx = el.getContext("2d"); 
-                       	console.log("'pooque'");
                        	console.log(imgURL);
                        	var photo = new Image();
                        	photo.onload = function() {
@@ -97,7 +94,7 @@
                                 showPicture.src = event.target.result;
                             };
                             fileReader.readAsDataURL(file);
-                        } catch (e) {
+                        } catch (event) {
                             //
                             var error = document.querySelector("#error");
                             if (error) {
